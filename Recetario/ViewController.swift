@@ -16,10 +16,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        shownRecepies = recepies
         tableView.dataSource = self
         tableView.delegate = self
         // Do any additional setup after loading the view.
+        Task {
+            await loadMeals()
+        }
+    }
+    
+    func loadMeals() async {
+        let meals = await ApiService.fetchMeals()
+        shownRecepies = meals.map(\.strMeal!)
+        recepies = meals.map(\.strMeal!)
+        self.tableView.reloadData()
     }
     
     @IBAction func seatchButtonPressed(_ sender: Any) {
@@ -28,7 +37,7 @@ class ViewController: UIViewController {
             self.tableView.reloadData()
             return
         }
-        let filterRecepies = recepies.filter() { $0.contains(self.textField.text ?? "") }
+        let filterRecepies = recepies.filter() { $0.lowercased(with: nil).contains(self.textField.text?.lowercased(with: nil) ?? "") }
         self.shownRecepies = filterRecepies
         print("Buscando: \(self.textField.text ?? "error")") 
         self.tableView.reloadData()
