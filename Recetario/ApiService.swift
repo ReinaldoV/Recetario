@@ -9,8 +9,16 @@ import Foundation
 
 class ApiService {
     static func fetchMeals() async -> [Meal] {
-        let urlString = "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
-        
+        var meals: [Meal] = []
+        for key in ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","k","r","s","t","u","v","w","x","y","z"] {
+            let mealsWithLetter = await fechMeal(key: key)
+            meals.append(contentsOf: mealsWithLetter)
+        }
+        return meals
+    }
+    
+    static private func fechMeal(key: String) async -> [Meal] {
+        let urlString = "https://www.themealdb.com/api/json/v1/1/search.php?f=\(key)"
         guard let url = URL(string: urlString) else {
             print("Invalid URL")
             return []
@@ -32,9 +40,6 @@ class ApiService {
             
             // Print results
             if let meals = mealResponse.meals {
-                for meal in meals {
-                    print("Recipe: \(String(describing: meal.strMeal))")
-                }
                 return meals
             }
         } catch {
