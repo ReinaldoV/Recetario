@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    private var recepies: [String] = ["patatas fritras", "pollo", "cafe", "pizza", "pasta", "hamburguesa", "tortilla", "ensalada", "tostadas", "sopa"]
+    private var recepies: [String] = []
     private var shownRecepies: [String] = []
     
     override func viewDidLoad() {
@@ -54,6 +54,29 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? RecepietableViewCell
         cell?.nameLabel.text = recepie
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedRecipe = shownRecepies[indexPath.row]
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // Aquí intentamos instanciar usando el ID que acabamos de poner en el Storyboard
+        if let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? RecepyViewController {
+            
+            // Pasamos los datos a las variables puente
+            detailVC.nameData = selectedRecipe
+            detailVC.detailsData = selectedRecipe
+            
+            // Navegamos
+            if let nav = self.navigationController {
+                nav.pushViewController(detailVC, animated: true)
+            } else {
+                self.present(detailVC, animated: true)
+            }
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

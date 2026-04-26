@@ -82,6 +82,50 @@
             </objects>
             <point key="canvasLocation" x="141" y="131"/>
         </scene>
+        <!--Recepy View Controller-->
+        <scene sceneID="jG1-fw-FEv">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dMd-FS-vDD" customClass="RecepyViewController" customModule="Recetario" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YO6-v2-huk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7R-ga-Hgp">
+                                <rect key="frame" x="46.666666666666657" y="118.00000000000001" width="300" height="28.666666666666671"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="FOD-4C-3kb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Receta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6u-Pp-Bph">
+                                <rect key="frame" x="16" y="186.66666666666669" width="361" height="557.33333333333326"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PIi-Li-dsA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PIi-Li-dsA" firstAttribute="trailing" secondItem="c6u-Pp-Bph" secondAttribute="trailing" constant="16" id="9Po-tW-P8K"/>
+                            <constraint firstItem="d7R-ga-Hgp" firstAttribute="top" secondItem="PIi-Li-dsA" secondAttribute="top" id="HcB-vy-bWc"/>
+                            <constraint firstItem="d7R-ga-Hgp" firstAttribute="centerX" secondItem="PIi-Li-dsA" secondAttribute="centerX" id="Zvr-iE-dHd"/>
+                            <constraint firstItem="c6u-Pp-Bph" firstAttribute="leading" secondItem="PIi-Li-dsA" secondAttribute="leading" constant="16" id="hM3-pr-jHR"/>
+                            <constraint firstItem="PIi-Li-dsA" firstAttribute="bottom" secondItem="c6u-Pp-Bph" secondAttribute="bottom" constant="40" id="qab-8Z-pdG"/>
+                            <constraint firstItem="c6u-Pp-Bph" firstAttribute="top" secondItem="d7R-ga-Hgp" secondAttribute="bottom" constant="40" id="tt0-3n-5Nz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailsLabel" destination="c6u-Pp-Bph" id="tQf-Sk-c0h"/>
+                        <outlet property="nameLabel" destination="d7R-ga-Hgp" id="dj9-lC-KZK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Qm-Jx-aIG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1122" y="130"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
