@@ -11,8 +11,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    private var recepies: [String] = []
-    private var shownRecepies: [String] = []
+    private var recepies: [Meal] = []
+    private var shownRecepies: [Meal] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +26,8 @@ class ViewController: UIViewController {
     
     func loadMeals() async {
         let meals = await ApiService.fetchMeals()
-        shownRecepies = meals.map(\.strMeal!)
-        recepies = meals.map(\.strMeal!)
+        shownRecepies = meals//meals.map(\.strMeal!)
+        recepies = meals//meals.map(\.strMeal!)
         self.tableView.reloadData()
     }
     
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
             self.tableView.reloadData()
             return
         }
-        let filterRecepies = recepies.filter() { $0.lowercased(with: nil).contains(self.textField.text?.lowercased(with: nil) ?? "") }
+        let filterRecepies = recepies.filter() { $0.strMeal?.lowercased(with: nil).contains(self.textField.text?.lowercased() ?? "") == true}
         self.shownRecepies = filterRecepies
         print("Buscando: \(self.textField.text ?? "error")") 
         self.tableView.reloadData()
@@ -52,7 +52,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let recepie = shownRecepies[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? RecepietableViewCell
-        cell?.nameLabel.text = recepie
+        cell?.nameLabel.text = recepie.strMeal
         return cell!
     }
     
@@ -65,8 +65,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         if let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? RecepyViewController {
             
             // Pasamos los datos a las variables puente
-            detailVC.nameData = selectedRecipe
-            detailVC.detailsData = selectedRecipe
+            detailVC.nameData = selectedRecipe.strMeal
+            detailVC.detailsData = selectedRecipe.strInstructions
             
             // Navegamos
             if let nav = self.navigationController {
