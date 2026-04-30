@@ -91,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7R-ga-Hgp">
-                                <rect key="frame" x="46.666666666666657" y="118.00000000000001" width="300" height="28.666666666666671"/>
+                                <rect key="frame" x="46.666666666666657" y="148" width="300" height="28.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="FOD-4C-3kb"/>
                                 </constraints>
@@ -99,27 +99,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Receta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6u-Pp-Bph">
-                                <rect key="frame" x="16" y="186.66666666666669" width="361" height="557.33333333333326"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="efk-FI-90i">
+                                <rect key="frame" x="20" y="206.66666666666669" width="353" height="527.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PIi-Li-dsA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="PIi-Li-dsA" firstAttribute="trailing" secondItem="c6u-Pp-Bph" secondAttribute="trailing" constant="16" id="9Po-tW-P8K"/>
-                            <constraint firstItem="d7R-ga-Hgp" firstAttribute="top" secondItem="PIi-Li-dsA" secondAttribute="top" id="HcB-vy-bWc"/>
+                            <constraint firstItem="PIi-Li-dsA" firstAttribute="trailing" secondItem="efk-FI-90i" secondAttribute="trailing" constant="20" id="6OB-wK-bC5"/>
+                            <constraint firstItem="d7R-ga-Hgp" firstAttribute="top" secondItem="PIi-Li-dsA" secondAttribute="top" constant="30" id="HcB-vy-bWc"/>
+                            <constraint firstItem="efk-FI-90i" firstAttribute="leading" secondItem="PIi-Li-dsA" secondAttribute="leading" constant="20" id="WJQ-Fr-zvd"/>
                             <constraint firstItem="d7R-ga-Hgp" firstAttribute="centerX" secondItem="PIi-Li-dsA" secondAttribute="centerX" id="Zvr-iE-dHd"/>
-                            <constraint firstItem="c6u-Pp-Bph" firstAttribute="leading" secondItem="PIi-Li-dsA" secondAttribute="leading" constant="16" id="hM3-pr-jHR"/>
-                            <constraint firstItem="PIi-Li-dsA" firstAttribute="bottom" secondItem="c6u-Pp-Bph" secondAttribute="bottom" constant="40" id="qab-8Z-pdG"/>
-                            <constraint firstItem="c6u-Pp-Bph" firstAttribute="top" secondItem="d7R-ga-Hgp" secondAttribute="bottom" constant="40" id="tt0-3n-5Nz"/>
+                            <constraint firstItem="PIi-Li-dsA" firstAttribute="bottom" secondItem="efk-FI-90i" secondAttribute="bottom" constant="50" id="d9B-xG-rRN"/>
+                            <constraint firstItem="efk-FI-90i" firstAttribute="top" secondItem="d7R-ga-Hgp" secondAttribute="bottom" constant="30" id="pXf-y2-TqE"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="detailsLabel" destination="c6u-Pp-Bph" id="tQf-Sk-c0h"/>
                         <outlet property="nameLabel" destination="d7R-ga-Hgp" id="dj9-lC-KZK"/>
+                        <outlet property="textView" destination="efk-FI-90i" id="qus-VH-5tV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qm-Jx-aIG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -128,6 +130,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
