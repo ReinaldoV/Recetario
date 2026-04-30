@@ -13,10 +13,12 @@ class RecepyViewController: UIViewController {
     // Si cambiaste los nombres en el Storyboard, cámbiados aquí también
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
     
     // Variables "puente" para recibir los datos
     var nameData: String?
     var detailsData: String?
+    var imageURL: String?
 
     // Quitamos el init personalizado porque rompe la carga desde Storyboard
     override func viewDidLoad() {
@@ -30,5 +32,13 @@ class RecepyViewController: UIViewController {
         // Usamos el nombre del label que configuraste
         nameLabel.text = nameData
         textView.text = detailsData
+        imageView.userActivity?.webpageURL = URL(string: imageURL ?? "")
+        let url = URL(string: imageURL ?? "")
+        let data = try? Data(contentsOf: url!)
+
+        if let imageData = data {
+            let image = UIImage(data: imageData)
+            imageView.image = image
+        }
     }
 }

@@ -67,6 +67,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             // Pasamos los datos a las variables puente
             detailVC.nameData = selectedRecipe.strMeal
             detailVC.detailsData = selectedRecipe.strInstructions
+            detailVC.imageURL = selectedRecipe.strMealThumb
             
             // Navegamos
             if let nav = self.navigationController {

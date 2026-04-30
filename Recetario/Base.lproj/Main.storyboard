@@ -100,33 +100,43 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="efk-FI-90i">
-                                <rect key="frame" x="20" y="206.66666666666669" width="353" height="527.33333333333326"/>
+                                <rect key="frame" x="20" y="384.66666666666674" width="353" height="349.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VTT-hr-kOS">
+                                <rect key="frame" x="20" y="186.66666666666663" width="353" height="178"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="178" id="taj-8V-ZNk"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PIi-Li-dsA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="efk-FI-90i" firstAttribute="top" secondItem="VTT-hr-kOS" secondAttribute="bottom" constant="20" id="1w4-45-uGN"/>
                             <constraint firstItem="PIi-Li-dsA" firstAttribute="trailing" secondItem="efk-FI-90i" secondAttribute="trailing" constant="20" id="6OB-wK-bC5"/>
                             <constraint firstItem="d7R-ga-Hgp" firstAttribute="top" secondItem="PIi-Li-dsA" secondAttribute="top" constant="30" id="HcB-vy-bWc"/>
+                            <constraint firstItem="VTT-hr-kOS" firstAttribute="leading" secondItem="PIi-Li-dsA" secondAttribute="leading" constant="20" id="O5W-cE-heW"/>
                             <constraint firstItem="efk-FI-90i" firstAttribute="leading" secondItem="PIi-Li-dsA" secondAttribute="leading" constant="20" id="WJQ-Fr-zvd"/>
                             <constraint firstItem="d7R-ga-Hgp" firstAttribute="centerX" secondItem="PIi-Li-dsA" secondAttribute="centerX" id="Zvr-iE-dHd"/>
+                            <constraint firstItem="VTT-hr-kOS" firstAttribute="top" secondItem="d7R-ga-Hgp" secondAttribute="bottom" constant="10" id="acx-cQ-vAF"/>
                             <constraint firstItem="PIi-Li-dsA" firstAttribute="bottom" secondItem="efk-FI-90i" secondAttribute="bottom" constant="50" id="d9B-xG-rRN"/>
-                            <constraint firstItem="efk-FI-90i" firstAttribute="top" secondItem="d7R-ga-Hgp" secondAttribute="bottom" constant="30" id="pXf-y2-TqE"/>
+                            <constraint firstItem="PIi-Li-dsA" firstAttribute="trailing" secondItem="VTT-hr-kOS" secondAttribute="trailing" constant="20" id="yfv-Pw-CXp"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="VTT-hr-kOS" id="sr9-5G-kV9"/>
                         <outlet property="nameLabel" destination="d7R-ga-Hgp" id="dj9-lC-KZK"/>
                         <outlet property="textView" destination="efk-FI-90i" id="qus-VH-5tV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qm-Jx-aIG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122" y="130"/>
+            <point key="canvasLocation" x="1119.8473282442749" y="129.57746478873241"/>
         </scene>
     </scenes>
     <resources>
