@@ -138,18 +138,23 @@
                                     <constraint firstAttribute="height" constant="178" id="taj-8V-ZNk"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLV-JI-U7G">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLV-JI-U7G">
                                 <rect key="frame" x="302" y="141" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="favoriteButtonPressed:" destination="dMd-FS-vDD" eventType="touchUpInside" id="tu6-ir-aQA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PIi-Li-dsA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="efk-FI-90i" firstAttribute="top" secondItem="VTT-hr-kOS" secondAttribute="bottom" constant="20" id="1w4-45-uGN"/>
+                            <constraint firstItem="bLV-JI-U7G" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PIi-Li-dsA" secondAttribute="leading" symbolic="YES" id="4j7-d9-Kce"/>
+                            <constraint firstItem="bLV-JI-U7G" firstAttribute="top" secondItem="PIi-Li-dsA" secondAttribute="top" constant="23" id="4jH-Ff-oNw"/>
                             <constraint firstItem="PIi-Li-dsA" firstAttribute="trailing" secondItem="efk-FI-90i" secondAttribute="trailing" constant="20" id="6OB-wK-bC5"/>
+                            <constraint firstItem="bLV-JI-U7G" firstAttribute="trailing" secondItem="YO6-v2-huk" secondAttribute="trailingMargin" id="AY3-NA-pRB"/>
                             <constraint firstItem="d7R-ga-Hgp" firstAttribute="top" secondItem="PIi-Li-dsA" secondAttribute="top" constant="30" id="HcB-vy-bWc"/>
                             <constraint firstItem="VTT-hr-kOS" firstAttribute="leading" secondItem="PIi-Li-dsA" secondAttribute="leading" constant="20" id="O5W-cE-heW"/>
                             <constraint firstItem="efk-FI-90i" firstAttribute="leading" secondItem="PIi-Li-dsA" secondAttribute="leading" constant="20" id="WJQ-Fr-zvd"/>
@@ -160,6 +165,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="favoriteButton" destination="bLV-JI-U7G" id="3rR-hM-HfB"/>
                         <outlet property="imageView" destination="VTT-hr-kOS" id="sr9-5G-kV9"/>
                         <outlet property="nameLabel" destination="d7R-ga-Hgp" id="dj9-lC-KZK"/>
                         <outlet property="textView" destination="efk-FI-90i" id="qus-VH-5tV"/>
