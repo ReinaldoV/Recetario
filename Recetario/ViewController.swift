@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     private var recepies: [Meal] = []
     private var shownRecepies: [Meal] = []
+    private var showFavorites: Bool = false
     private let favoritesHandler: FavoriteHandlerProtocol = FavoriteHandler()
     
     override func viewDidLoad() {
@@ -44,6 +45,17 @@ class ViewController: UIViewController {
         print("Buscando: \(self.textField.text ?? "error")") 
         self.tableView.reloadData()
     }
+    
+    @IBAction func favoritesButtonTapped(_ sender: Any) {
+        showFavorites = !showFavorites
+        if showFavorites {
+            shownRecepies = favoritesHandler.getFavorites()
+        } else {
+            shownRecepies = recepies
+        }
+        self.tableView.reloadData()
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
