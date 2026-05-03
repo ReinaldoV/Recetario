@@ -60,9 +60,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let isFavorite = favorites.contains(where: { $0.strMeal == shownRecepies[indexPath.row].strMeal})
         
         if isFavorite {
-            cell?.favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            cell?.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         } else {
-            cell?.favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+            cell?.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
         return cell!
     }

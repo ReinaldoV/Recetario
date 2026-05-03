@@ -24,6 +24,9 @@ class RecipeTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        // Reset to a clean slate
+        nameLabel.text = nil
+        favoriteButton.setImage(nil, for: .normal)
         updateView()
     }
 
