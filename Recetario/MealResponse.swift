@@ -55,3 +55,9 @@ struct Meal: Codable {
         return allIngredients.compactMap { $0 }.filter { !$0.trimmingCharacters(in: .whitespaces).isEmpty }
     }
 }
+
+extension Meal: Equatable {
+    static func == (lhs: Meal, rhs: Meal) -> Bool {
+            return lhs.idMeal == rhs.idMeal
+        }
+}

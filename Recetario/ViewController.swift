@@ -11,8 +11,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    
     private var recepies: [Meal] = []
     private var shownRecepies: [Meal] = []
+    private let favoritesHandler: FavoriteHandlerProtocol = FavoriteHandler()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +52,18 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let favorites = favoritesHandler.getFavorites()
         let recepie = shownRecepies[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? RecepietableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? RecipeTableViewCell
         cell?.nameLabel.text = recepie.strMeal
+        cell?.meal = recepie
+        let isFavorite = favorites.contains(where: { $0.strMeal == shownRecepies[indexPath.row].strMeal})
+        
+        if isFavorite {
+            cell?.favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        } else {
+            cell?.favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+        }
         return cell!
     }
     
@@ -79,8 +90,4 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
-}
-
-class RecepietableViewCell: UITableViewCell {
-    @IBOutlet weak var nameLabel: UILabel!
 }

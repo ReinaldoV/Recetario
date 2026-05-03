@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="162.66666666666669" width="393" height="621.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="sHh-lV-7Xb" customClass="RecepietableViewCell" customModule="Recetario" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="sHh-lV-7Xb" customClass="RecipeTableViewCell" customModule="Recetario" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sHh-lV-7Xb" id="mOt-n7-Qee" customClass="RecepieTableViewCell" customModule="Recetario" customModuleProvider="target">
@@ -46,6 +46,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNC-VL-99z">
+                                                    <rect key="frame" x="316" y="8" width="40" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="♡"/>
+                                                    <connections>
+                                                        <action selector="favoritePressed:" destination="sHh-lV-7Xb" eventType="touchUpInside" id="3tC-08-fBt"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="h92-gK-tz6" firstAttribute="leading" secondItem="mOt-n7-Qee" secondAttribute="leadingMargin" constant="20" id="7AV-VH-A42"/>
@@ -53,7 +62,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="nameLabel" destination="h92-gK-tz6" id="vRY-Rs-KPk"/>
+                                            <outlet property="favoriteButton" destination="pNC-VL-99z" id="SwZ-oE-d5a"/>
+                                            <outlet property="nameLabel" destination="h92-gK-tz6" id="IA2-4i-yVw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -113,6 +123,12 @@
                                     <constraint firstAttribute="height" constant="178" id="taj-8V-ZNk"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLV-JI-U7G">
+                                <rect key="frame" x="302" y="141" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PIi-Li-dsA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
