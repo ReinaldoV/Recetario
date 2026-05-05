@@ -88,6 +88,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         if let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? RecepyViewController {
             
             // Pasamos los datos a las variables puente
+            detailVC.meal = selectedRecipe
             detailVC.nameData = selectedRecipe.strMeal
             detailVC.detailsData = selectedRecipe.strInstructions
             detailVC.imageURL = selectedRecipe.strMealThumb

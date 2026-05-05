@@ -35,6 +35,7 @@ class RecepyViewController: UIViewController {
     @IBAction func favoriteButtonPressed(_ sender: Any) {
        guard let meal = meal else { return }
         favoriteHandler?.toggleFavorite(meal)
+        isFavorite = ((favoriteHandler?.getValueOf(meal)) != nil)
         setupUI()
     }
     

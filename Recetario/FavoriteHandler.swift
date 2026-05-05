@@ -6,6 +6,7 @@ protocol FavoriteHandlerProtocol {
     func saveFavorite(_ meal: Meal)
     func deleteFavorite(_ meal: Meal) // Fixed spelling
     func toggleFavorite(_ meal: Meal)
+    func getValueOf(_ meal: Meal) -> Bool
 }
 
 class FavoriteHandler: FavoriteHandlerProtocol {
@@ -60,5 +61,9 @@ class FavoriteHandler: FavoriteHandlerProtocol {
         } catch {
             print("Error encoding favorites: \(error)")
         }
+    }
+    
+    func getValueOf(_ meal: Meal) -> Bool {
+        return getFavorites().contains(where: { $0.idMeal == meal.idMeal })
     }
 }
