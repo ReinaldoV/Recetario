@@ -94,7 +94,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             detailVC.imageURL = selectedRecipe.strMealThumb
             detailVC.favoriteHandler = favoritesHandler
             detailVC.isFavorite = favoritesHandler.getFavorites().contains(where: { $0.strMeal == selectedRecipe.strMeal})
-            
+            detailVC.tableViewController = self
             
             // Navegamos
             if let nav = self.navigationController {

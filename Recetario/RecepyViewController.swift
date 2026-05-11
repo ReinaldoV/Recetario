@@ -23,6 +23,8 @@ class RecepyViewController: UIViewController {
     var imageURL: String?
     var isFavorite: Bool = false
     var favoriteHandler: FavoriteHandlerProtocol?
+    
+    weak var tableViewController: ViewController?
 
     // Quitamos el init personalizado porque rompe la carga desde Storyboard
     override func viewDidLoad() {
@@ -35,7 +37,7 @@ class RecepyViewController: UIViewController {
     @IBAction func favoriteButtonPressed(_ sender: Any) {
        guard let meal = meal else { return }
         favoriteHandler?.toggleFavorite(meal)
-        isFavorite = ((favoriteHandler?.getValueOf(meal)) != nil)
+        isFavorite = favoriteHandler?.getValueOf(meal) ?? false
         setupUI()
     }
     
@@ -54,6 +56,13 @@ class RecepyViewController: UIViewController {
         }
         
         favoriteButton.setTitle("", for: .normal)
+        setImage(isFavorite: isFavorite)
+        self.reloadInputViews()
+        self.tableViewController?.tableView.reloadData()
+    }
+    
+    private func setImage(isFavorite: Bool) {
+        favoriteButton.setImage(nil, for: .normal)
         if isFavorite {
             favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         } else {
