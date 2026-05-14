@@ -23,6 +23,7 @@ class RecepyViewController: UIViewController {
     var imageURL: String?
     var isFavorite: Bool = false
     var favoriteHandler: FavoriteHandlerProtocol?
+    var addToCarHandler: CarHandleProtocol? = CarHandle()
     
     weak var tableViewController: ViewController?
 
@@ -39,6 +40,11 @@ class RecepyViewController: UIViewController {
         favoriteHandler?.toggleFavorite(meal)
         isFavorite = favoriteHandler?.getValueOf(meal) ?? false
         setupUI()
+    }
+    
+    @IBAction func addToCartButtonPressed(_ sender: Any) {
+        print("added to cart: \(meal?.ingredientsList ?? [])")
+        addToCarHandler?.addIngredientsToCart(ingredients: meal?.ingredientsList ?? [])
     }
     
     private func setupUI() {

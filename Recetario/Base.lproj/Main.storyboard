@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cu1-WT-xa6">
-                                <rect key="frame" x="16" y="118" width="195" height="34"/>
+                                <rect key="frame" x="16" y="118" width="271" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -66,19 +66,28 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfl-VM-m3x">
-                                <rect key="frame" x="293" y="116.66666666666669" width="93" height="35"/>
+                                <rect key="frame" x="339" y="116.66666666666669" width="47" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Favoritos"/>
+                                <buttonConfiguration key="configuration" style="plain" title="♥️"/>
                                 <connections>
                                     <action selector="favoritesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="44D-Sf-mzS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdi-sU-RGJ">
-                                <rect key="frame" x="216" y="117.66666666666669" width="77" height="35"/>
+                                <rect key="frame" x="292" y="117.66666666666669" width="47" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Buscar"/>
+                                <buttonConfiguration key="configuration" style="filled" title="🔎"/>
                                 <connections>
                                     <action selector="seatchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6kb-hL-BOg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bU-Ni-CVV">
+                                <rect key="frame" x="30" y="792" width="47" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="🛒"/>
+                                <connections>
+                                    <segue destination="lP4-Ye-L4N" kind="show" id="7f6-ra-6rw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -146,6 +155,14 @@
                                     <action selector="favoriteButtonPressed:" destination="dMd-FS-vDD" eventType="touchUpInside" id="tu6-ir-aQA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoO-eE-Rad">
+                                <rect key="frame" x="8" y="141" width="47" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="🛒"/>
+                                <connections>
+                                    <action selector="addToCartButtonPressed:" destination="dMd-FS-vDD" eventType="touchUpInside" id="T25-cP-KW3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PIi-Li-dsA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -155,12 +172,14 @@
                             <constraint firstItem="bLV-JI-U7G" firstAttribute="top" secondItem="PIi-Li-dsA" secondAttribute="top" constant="23" id="4jH-Ff-oNw"/>
                             <constraint firstItem="PIi-Li-dsA" firstAttribute="trailing" secondItem="efk-FI-90i" secondAttribute="trailing" constant="20" id="6OB-wK-bC5"/>
                             <constraint firstItem="bLV-JI-U7G" firstAttribute="trailing" secondItem="YO6-v2-huk" secondAttribute="trailingMargin" id="AY3-NA-pRB"/>
+                            <constraint firstItem="DoO-eE-Rad" firstAttribute="top" secondItem="PIi-Li-dsA" secondAttribute="top" constant="23" id="D8O-pS-9Qv"/>
                             <constraint firstItem="d7R-ga-Hgp" firstAttribute="top" secondItem="PIi-Li-dsA" secondAttribute="top" constant="30" id="HcB-vy-bWc"/>
                             <constraint firstItem="VTT-hr-kOS" firstAttribute="leading" secondItem="PIi-Li-dsA" secondAttribute="leading" constant="20" id="O5W-cE-heW"/>
                             <constraint firstItem="efk-FI-90i" firstAttribute="leading" secondItem="PIi-Li-dsA" secondAttribute="leading" constant="20" id="WJQ-Fr-zvd"/>
                             <constraint firstItem="d7R-ga-Hgp" firstAttribute="centerX" secondItem="PIi-Li-dsA" secondAttribute="centerX" id="Zvr-iE-dHd"/>
                             <constraint firstItem="VTT-hr-kOS" firstAttribute="top" secondItem="d7R-ga-Hgp" secondAttribute="bottom" constant="10" id="acx-cQ-vAF"/>
                             <constraint firstItem="PIi-Li-dsA" firstAttribute="bottom" secondItem="efk-FI-90i" secondAttribute="bottom" constant="50" id="d9B-xG-rRN"/>
+                            <constraint firstItem="DoO-eE-Rad" firstAttribute="leading" secondItem="PIi-Li-dsA" secondAttribute="leading" constant="8" id="nyG-Vb-POx"/>
                             <constraint firstItem="PIi-Li-dsA" firstAttribute="trailing" secondItem="VTT-hr-kOS" secondAttribute="trailing" constant="20" id="yfv-Pw-CXp"/>
                         </constraints>
                     </view>
@@ -173,7 +192,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qm-Jx-aIG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1119.8473282442749" y="129.57746478873241"/>
+            <point key="canvasLocation" x="1117" y="-294"/>
+        </scene>
+        <!--Buy List View Controller-->
+        <scene sceneID="MPV-0L-XzU">
+            <objects>
+                <viewController storyboardIdentifier="buyingListView" id="lP4-Ye-L4N" customClass="BuyListViewController" customModule="Recetario" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e5w-xm-BtS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carro de la compra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oR8-V5-oJj">
+                                <rect key="frame" x="123.66666666666669" y="59" width="146" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esto va a tener muchas lineasa. Esto va a tener muchas lineasa. Esto va a tener muchas lineasa" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmT-FN-diJ">
+                                <rect key="frame" x="20" y="130" width="353" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ev3-NF-gkl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gmT-FN-diJ" firstAttribute="centerX" secondItem="ev3-NF-gkl" secondAttribute="centerX" id="Lye-bO-orG"/>
+                            <constraint firstItem="ev3-NF-gkl" firstAttribute="trailing" secondItem="gmT-FN-diJ" secondAttribute="trailing" constant="20" id="Ts4-Ru-CDb"/>
+                            <constraint firstItem="gmT-FN-diJ" firstAttribute="leading" secondItem="ev3-NF-gkl" secondAttribute="leading" constant="20" id="hPe-5A-8YK"/>
+                            <constraint firstItem="oR8-V5-oJj" firstAttribute="top" secondItem="ev3-NF-gkl" secondAttribute="top" id="jNz-pk-iha"/>
+                            <constraint firstItem="oR8-V5-oJj" firstAttribute="centerX" secondItem="ev3-NF-gkl" secondAttribute="centerX" id="nKx-S6-2cQ"/>
+                            <constraint firstItem="gmT-FN-diJ" firstAttribute="top" secondItem="oR8-V5-oJj" secondAttribute="bottom" constant="50" id="vIS-xl-WtV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qAx-fx-U3l"/>
+                    <connections>
+                        <outlet property="listLabel" destination="gmT-FN-diJ" id="OlL-1h-y1x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EAx-In-RNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1117" y="370"/>
         </scene>
     </scenes>
     <resources>

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     private var shownRecepies: [Meal] = []
     private var showFavorites: Bool = false
     private let favoritesHandler: FavoriteHandlerProtocol = FavoriteHandler()
+    private var carHandler: CarHandleProtocol = CarHandle()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +95,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             detailVC.imageURL = selectedRecipe.strMealThumb
             detailVC.favoriteHandler = favoritesHandler
             detailVC.isFavorite = favoritesHandler.getFavorites().contains(where: { $0.strMeal == selectedRecipe.strMeal})
+            detailVC.addToCarHandler = carHandler
             detailVC.tableViewController = self
             
             // Navegamos
