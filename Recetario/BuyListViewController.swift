@@ -15,11 +15,13 @@ class BuyListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        listLabel.text = cartHandler.getCar().joined(separator: "\n")
+        // Updates the view when the screen loads
+        updateView()
     }
-    
+        
     func updateView() {
-        listLabel.text = cartHandler.getCar().joined(separator: "\n")
+        listLabel.text = cartHandler.getCar().map { $0.name }.joined(separator: "\n")
+        //cartHandler.getCar().map { $0.name }.joined(separator: "\n")
     }
     
 }
