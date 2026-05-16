@@ -51,7 +51,10 @@ class RecepyViewController: UIViewController {
         
         // Usamos el nombre del label que configuraste
         nameLabel.text = nameData
-        textView.text = detailsData
+        var text = ""
+        text.append("Ingredientes: \n\n\(meal!.ingredientsList.joined(separator: "\n"))")
+        text.append("\n\n")
+        textView.text = text.appending(detailsData ?? "")
         imageView.userActivity?.webpageURL = URL(string: imageURL ?? "")
         let url = URL(string: imageURL ?? "")
         let data = try? Data(contentsOf: url!)
