@@ -203,13 +203,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carro de la compra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oR8-V5-oJj">
-                                <rect key="frame" x="123.66666666666669" y="59" width="146" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="95.333333333333329" y="109" width="202.33333333333337" height="27.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esto va a tener muchas lineasa. Esto va a tener muchas lineasa. Esto va a tener muchas lineasa" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmT-FN-diJ">
-                                <rect key="frame" x="20" y="130" width="353" height="61"/>
+                                <rect key="frame" x="20" y="186.66666666666666" width="353" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -221,7 +221,7 @@
                             <constraint firstItem="gmT-FN-diJ" firstAttribute="centerX" secondItem="ev3-NF-gkl" secondAttribute="centerX" id="Lye-bO-orG"/>
                             <constraint firstItem="ev3-NF-gkl" firstAttribute="trailing" secondItem="gmT-FN-diJ" secondAttribute="trailing" constant="20" id="Ts4-Ru-CDb"/>
                             <constraint firstItem="gmT-FN-diJ" firstAttribute="leading" secondItem="ev3-NF-gkl" secondAttribute="leading" constant="20" id="hPe-5A-8YK"/>
-                            <constraint firstItem="oR8-V5-oJj" firstAttribute="top" secondItem="ev3-NF-gkl" secondAttribute="top" id="jNz-pk-iha"/>
+                            <constraint firstItem="oR8-V5-oJj" firstAttribute="top" secondItem="ev3-NF-gkl" secondAttribute="top" constant="50" id="jNz-pk-iha"/>
                             <constraint firstItem="oR8-V5-oJj" firstAttribute="centerX" secondItem="ev3-NF-gkl" secondAttribute="centerX" id="nKx-S6-2cQ"/>
                             <constraint firstItem="gmT-FN-diJ" firstAttribute="top" secondItem="oR8-V5-oJj" secondAttribute="bottom" constant="50" id="vIS-xl-WtV"/>
                         </constraints>
