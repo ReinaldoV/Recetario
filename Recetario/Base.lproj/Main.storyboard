@@ -204,31 +204,47 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carro de la compra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oR8-V5-oJj">
                                 <rect key="frame" x="95.333333333333329" y="109" width="202.33333333333337" height="27.666666666666657"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27.666666666666657" id="CWR-NT-Iiq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esto va a tener muchas lineasa. Esto va a tener muchas lineasa. Esto va a tener muchas lineasa" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmT-FN-diJ">
-                                <rect key="frame" x="20" y="186.66666666666666" width="353" height="61"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lwG-PY-Utg">
+                                <rect key="frame" x="20" y="186.66666666666669" width="353" height="586.33333333333326"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="W80-6K-B2E">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="586.33333333333337"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="W80-6K-B2E" secondAttribute="bottom" id="XVN-g1-Tq3"/>
+                                    <constraint firstAttribute="trailing" secondItem="W80-6K-B2E" secondAttribute="trailing" id="Yki-vb-TzH"/>
+                                    <constraint firstItem="W80-6K-B2E" firstAttribute="top" secondItem="lwG-PY-Utg" secondAttribute="top" id="cNL-ha-0Ou"/>
+                                    <constraint firstItem="W80-6K-B2E" firstAttribute="leading" secondItem="lwG-PY-Utg" secondAttribute="leading" id="eC9-Xo-0Mh"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ev3-NF-gkl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gmT-FN-diJ" firstAttribute="centerX" secondItem="ev3-NF-gkl" secondAttribute="centerX" id="Lye-bO-orG"/>
-                            <constraint firstItem="ev3-NF-gkl" firstAttribute="trailing" secondItem="gmT-FN-diJ" secondAttribute="trailing" constant="20" id="Ts4-Ru-CDb"/>
-                            <constraint firstItem="gmT-FN-diJ" firstAttribute="leading" secondItem="ev3-NF-gkl" secondAttribute="leading" constant="20" id="hPe-5A-8YK"/>
+                            <constraint firstAttribute="trailing" secondItem="lwG-PY-Utg" secondAttribute="trailing" constant="20" id="JEZ-Yx-wsG"/>
+                            <constraint firstItem="lwG-PY-Utg" firstAttribute="leading" secondItem="e5w-xm-BtS" secondAttribute="leading" constant="20" id="bhN-L2-wrk"/>
                             <constraint firstItem="oR8-V5-oJj" firstAttribute="top" secondItem="ev3-NF-gkl" secondAttribute="top" constant="50" id="jNz-pk-iha"/>
                             <constraint firstItem="oR8-V5-oJj" firstAttribute="centerX" secondItem="ev3-NF-gkl" secondAttribute="centerX" id="nKx-S6-2cQ"/>
-                            <constraint firstItem="gmT-FN-diJ" firstAttribute="top" secondItem="oR8-V5-oJj" secondAttribute="bottom" constant="50" id="vIS-xl-WtV"/>
+                            <constraint firstItem="ev3-NF-gkl" firstAttribute="bottom" secondItem="lwG-PY-Utg" secondAttribute="bottom" constant="20" id="oyU-Rz-hgY"/>
+                            <constraint firstItem="lwG-PY-Utg" firstAttribute="top" secondItem="oR8-V5-oJj" secondAttribute="bottom" constant="50" id="vEb-uB-y7m"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qAx-fx-U3l"/>
                     <connections>
-                        <outlet property="listLabel" destination="gmT-FN-diJ" id="OlL-1h-y1x"/>
+                        <outlet property="listTextView" destination="W80-6K-B2E" id="Rl2-PZ-fUk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAx-In-RNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

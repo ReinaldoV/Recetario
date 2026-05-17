@@ -10,7 +10,7 @@ import UIKit
 
 class BuyListViewController: UIViewController {
   
-    @IBOutlet weak var listLabel: UILabel!
+    @IBOutlet weak var listTextView: UITextView!
     var cartHandler: CarHandleProtocol = CarHandle()
     
     override func viewDidLoad() {
@@ -20,7 +20,7 @@ class BuyListViewController: UIViewController {
     }
         
     func updateView() {
-        listLabel.text = cartHandler.getCar().map { $0.name }.joined(separator: "\n")
+        listTextView.text = cartHandler.getCar().map { $0.name }.joined(separator: "\n")
         //cartHandler.getCar().map { $0.name }.joined(separator: "\n")
     }
     
