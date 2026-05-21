@@ -88,7 +88,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         // Aquí intentamos instanciar usando el ID que acabamos de poner en el Storyboard
         if let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? RecepyViewController {
             
-            // Pasamos los datos a las variables puente
+            // Pasamos los datos a las variables puente.
             detailVC.meal = selectedRecipe
             detailVC.nameData = selectedRecipe.strMeal
             detailVC.detailsData = selectedRecipe.strInstructions
